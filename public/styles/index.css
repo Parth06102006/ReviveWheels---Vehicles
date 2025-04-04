@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background: radial-gradient(at center,rgb(3, 104, 3),rgb(221, 255, 218));
+    background: radial-gradient(at center,rgba(117,183,122,255),rgba(111,179,181,255));
 }
 
 /* Header Styling */
@@ -137,24 +137,33 @@ label
 
 /* Custom styling for Bootstrap cards in car listings */
 .card {
-    border-radius: 12px;
+    border-radius: 100px;
     border: none;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     background: radial-gradient(at center,rgb(235, 255, 235),rgb(252, 254, 252));
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,border ease-in-out 0.1s;
     overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    border:2px solid rgb(18, 130, 18);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Car image styling */
 .card-img-top {
+    width: fit-content;
+    border-radius: 3px;
+    padding:3px;
     height: 200px;
     object-fit: cover;
+}
+
+.card-img 
+{
+    border-radius: 3px;
 }
 
 /* Price styling */
