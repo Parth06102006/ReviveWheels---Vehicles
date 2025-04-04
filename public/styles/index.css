@@ -1,222 +1,281 @@
+/* Base Styles */
 body {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: radial-gradient(at center,rgba(117,183,122,255),rgba(111,179,181,255));
+    background-color: #f8f8f8;
+    color: #333;
 }
 
-/* Header Styling */
+/* Header Styling - Bewakoof Style */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    background: #ffffff;
-    color: rgb(0, 0, 0);
+    padding: 15px 5%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header ul {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 header button {
-    background: #27ae60;
+    background: #519c6b;
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 10px 25px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 
 header button:hover {
-    background: #2ecc71;
+    background: #519c6b;
+    transform: scale(1.05);
 }
 
-/* Form Container */
-.form-container {
-    width: 80%;
-    margin: 30px auto;
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-}
-
-/* User Details & Video Section */
-.form-content {
-    display: flex;
-    justify-content: space-between;
+/* Marketplace Grid Layout */
+#sell-buy {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-}
-
-/* User Details */
-.user-details {
-    width: 50%;
-    border: 1px solid black;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-.user-details input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-/* Video Section */
-.video-section {
-    width: 50%;
-    text-align: center;
-    padding: 15px;
-}
-
-.video-section video {
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Vehicle Details */
-.vehicle-details {
-    margin-top: 25px;
-    border: 1px solid black;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-/* Submit Button */
-.submit-section {
-    text-align: center;
+    padding: 20px 5%;
     margin-top: 20px;
 }
 
-.submit-section button {
-    padding: 10px 20px;
-    background: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.submit-section button:hover {
-    background: #2980b9;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #34495e;
-    color: white;
-}
-
-input
-{
-    border-radius: 20px;
-    border:1px solid rgb(182, 182, 182);
-    text-align: center;
-
-}
-
-input[type='file']
-{
-    border:none;
-}
-
-label
-{
-    font-size: 20px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
-    margin-top: 40px;
-}
-
-/* Custom styling for Bootstrap cards in car listings */
+/* Card Styling - Bewakoof Inspired */
 .card {
-    border-radius: 100px;
+    border-radius: 8px;
     border: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    background: radial-gradient(at center,rgb(235, 255, 235),rgb(252, 254, 252));
-    transition: transform 0.3s ease, box-shadow 0.3s ease,border ease-in-out 0.1s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+    background: white;
+    transition: all 0.3s ease;
     overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    border:2px solid rgb(18, 130, 18);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Sale Badge */
+.card::after {
+    content: 'EV SPECIAL';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #519c6b;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 /* Car image styling */
 .card-img-top {
-    width: fit-content;
-    border-radius: 3px;
-    padding:3px;
+    width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 15px;
+    background: #f5f5f5;
+    transition: transform 0.3s ease;
 }
 
-.card-img 
-{
-    border-radius: 3px;
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Card Body */
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 /* Price styling */
 .card .card-title {
-    font-size: 22px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #519c6b;
+    margin-bottom: 5px;
 }
 
 /* Car model name styling */
 .card .card-text {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    color: #333;
+    color: #535766;
     margin-bottom: 8px;
+    flex-grow: 1;
 }
 
 /* Year and km styling */
 .card span {
     display: block;
-    color: #666;
-    font-size: 14px;
+    color: #7e818c;
+    font-size: 12px;
     margin-bottom: 8px;
 }
 
 /* Location styling */
 .card .card-body p {
-    color: #666;
-    font-size: 14px;
+    color: #282c3f;
+    font-size: 12px;
     margin-bottom: 0;
-}
-
-/* Car link styling */
-.card-link {
-    color: #0066ff;
-    font-weight: 500;
-    padding: 8px 20px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-}
-
-.card-link:hover {
-    background-color: #f0f7ff;
-    text-decoration: none;
+    font-weight: 600;
 }
 
 /* Date listed styling */
 .card > p:last-child {
-    font-size: 12px;
-    color: #888;
+    font-size: 10px;
+    color: #94969f;
     text-align: center;
     padding: 8px 0;
     margin: 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #f5f5f6;
+    background: #fafafa;
+}
+
+/* Search Bar Styling */
+.search-container {
+    padding: 20px 5%;
+    background: #519c6b;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+}
+
+.search-container button {
+    padding: 12px 20px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Categories */
+.categories {
+    display: flex;
+    overflow-x: auto;
+    padding: 15px 5%;
+    gap: 15px;
+    background: white;
+    margin-bottom: 20px;
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    padding: 8px 15px;
+    background: #f5f5f6;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-item:hover, .category-item.active {
+    background: #519c6b;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: #2a2a2a;
+    color: white;
+    padding: 40px 5%;
+    margin-top: 50px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-column h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #519c6b;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #eaeaec;
+    cursor: pointer;
+}
+
+.footer-column li:hover {
+    color: #519c6b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #sell-buy {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .card-img-top {
+        height: 150px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
 }
