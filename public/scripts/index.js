@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded',()=>{
             <span>${data.year_km}</span>
             <p>${data.location}</p>
             </div>  
-            <div class="card-body" style="display: flex; justify-content: center;">
-            <a href="#" class="card-link">Car link</a>
-            </div>
             <p>${data.date_listed}</p>`;
         const cardComponent = document.createElement('div');
         cardComponent.setAttribute('data-id',Date.now())

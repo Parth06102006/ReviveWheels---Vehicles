@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background: radial-gradient(at center,rgb(232, 255, 232),white);
+    background: radial-gradient(at center,rgb(3, 104, 3),rgb(221, 255, 218));
 }
 
 /* Header Styling */
@@ -135,33 +135,79 @@ label
     margin-top: 40px;
 }
 
-.carStyle
-{
-    font-family: 'Poppins';
-    border-radius: 100px;
-    border:none;
-    background: #00c950;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
-    padding: 5px;
+/* Custom styling for Bootstrap cards in car listings */
+.card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background: radial-gradient(at center,rgb(235, 255, 235),rgb(252, 254, 252));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
-@keyframes hoverY {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-  
-.carStyle:hover 
-{
-    animation: hoverY 2s infinite;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-#car-image
-{
-    width:100%;
-    height:300px;
+/* Car image styling */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
 }
 
-.card-link
-{
-    text-decoration:none;
+/* Price styling */
+.card .card-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Car model name styling */
+.card .card-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Year and km styling */
+.card span {
+    display: block;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* Location styling */
+.card .card-body p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Car link styling */
+.card-link {
+    color: #0066ff;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.card-link:hover {
+    background-color: #f0f7ff;
+    text-decoration: none;
+}
+
+/* Date listed styling */
+.card > p:last-child {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    padding: 8px 0;
+    margin: 0;
+    border-top: 1px solid #eee;
 }
